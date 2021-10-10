@@ -12,11 +12,13 @@ pub mod event_test {
             such: "baz".to_string(),
             compute_units: "bar".to_string(),
             very_wow: true,
+            a: "a".to_string(),
+            b: "b".to_string(),
         });
         Ok(())
     }
     pub fn initialize_b(ctx: Context<Initialize>) -> ProgramResult {
-        msg!("{{\"message\": \"{}\", \"number\": {}, \"such\": \"{}\", \"compute_units\": \"{}\", \"very_wow\": \"{}\"}}", "foobar", 123, "baz", "bar", true);
+        msg!("{{\"message\": \"{}\", \"number\": {}, \"such\": \"{}\", \"compute_units\": \"{}\", \"very_wow\": \"{}\", \"a\": \"{}\", \"b\": \"{}\"}}", "foobar", 123, "baz", "bar", true, "a", "b");
         Ok(())
     }
 }
@@ -32,5 +34,7 @@ pub struct HelloWorld {
     pub such: String,
     pub compute_units: String,
     pub very_wow: bool,
+    pub a: String,
+    pub b: String,
 }
 
